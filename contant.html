@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Freshly-Beebah</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Contact Freshly-Beebah</h1>
+    <p>We’d love to hear from you 💚</p>
+    <nav>
+      <a href="habeebah html.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <h2>Get in Touch</h2>
+    <p>Have questions, feedback, or want to place an order directly?  
+       Fill out the form below and we’ll get back to you soon!</p>
+
+    <form id="contact-form" class="contact-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="e.g. +234 801 234 5678" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="example@email.com">
+
+      <label for="message">Message / Order Details</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message or order details..." required></textarea>
+
+      <button type="submit">📩 Send Message</button>
+    </form>
+
+    <p id="feedback" class="feedback"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Freshly-Beebah. All rights reserved.</p>
+  </footer>
+
+  <!-- ✅ JavaScript -->
+  <script>
+    const form = document.getElementById('contact-form');
+    const feedback = document.getElementById('feedback');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Stop page reload
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // Validate inputs
+      if (name.length < 3) {
+        showMessage('⚠️ Name must be at least 3 characters.');
+        return;
+      }
+
+      const phonePattern = /^\+?\d{10,15}$/;
+      if (!phonePattern.test(phone)) {
+        showMessage('⚠️ Please enter a valid phone number.');
+        return;
+      }
+
+      if (message.length < 10) {
+        showMessage('⚠️ Message must be at least 10 characters.');
+        return;
+      }
+
+      // Show success message
+      showMessage('✅ Thank you, your message has been sent successfully!');
+      form.reset();
+    });
+
+    function showMessage(msg) {
+      feedback.textContent = msg;
+      feedback.style.opacity = 1;
+      setTimeout(() => feedback.style.opacity = 0, 4000);
+    }
+
+    // Field highlight animation
+    document.querySelectorAll('input, textarea').forEach(field => {
+      field.addEventListener('focus', () => {
+        field.style.borderColor = '#2e7d32';
+        field.style.boxShadow = '0 0 8px rgba(46,125,50,0.3)';
+      });
+      field.addEventListener('blur', () => {
+        field.style.borderColor = '#ccc';
+        field.style.boxShadow = 'none';
+      });
+    });
+  </script>
+</body>
+<style>
+    .contact-section {
+  width: 80%;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 5px rgba(46,125,50,0.3);
+}
+
+.contact-form button {
+  width: fit-content;
+  align-self: center;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #388e3c;
+}
+
+</style>
+</html>

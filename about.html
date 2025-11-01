@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Freshly-Beebah</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>About Freshly-Beebah</h1>
+    <p>Where Freshness Meets Nature</p>
+    <nav>
+      <a href="habeebah html.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <h2>Our Story</h2>
+    <p>
+      Freshly-Beebah began with a simple mission — to bring the power of natural
+      freshness into every home. Our handcrafted cleaning products are infused with
+      pure botanical extracts that care for your hands and the planet.
+    </p>
+    <p>
+      Each bottle of <strong>Aloe Fresh</strong> and <strong>Citrus Bloom</strong> is made
+      with love, combining natural ingredients and effective formulas to leave your
+      space sparkling clean, naturally.
+    </p>
+
+    <h2>Our Promise</h2>
+    <ul>
+      <li>✅ 100% Natural & Safe Ingredients</li>
+      <li>🌿 Eco-friendly and Biodegradable</li>
+      <li>💧 Gentle on Skin, Tough on Dirt</li>
+      <li>🇳🇬 Proudly Made in Nigeria</li>
+    </ul>
+
+    <h2>Our Mission</h2>
+    <p>
+      To inspire healthy, eco-friendly living through simple and sustainable cleaning
+      solutions — proving that cleanliness and care for nature can go hand in hand.
+    </p>
+
+    <div class="about-images">
+      <img src="{{ url_for('static', filename='aloe-fresh.jpg') }}" alt="Aloe Fresh">
+      <img src="{{ url_for('static', filename='citrus-bloom.jpg') }}" alt="Citrus Bloom">
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Freshly-Beebah. All rights reserved.</p>
+  </footer>
+</body>
+<style>
+.about-section {
+  width: 80%;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: left;
+  line-height: 1.8;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.about-section h2 {
+  color: #2e7d32;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 2rem;
+  border-bottom: 2px solid #c8e6c9;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.about-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.about-section ul li {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2e7d32;
+}
+
+.about-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.about-images img {
+  width: 280px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Optional animation effect */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Active nav link highlight */
+.active {
+  text-decoration: underline;
+  color: #1b5e20;
+}
+
+</style>
+</html>

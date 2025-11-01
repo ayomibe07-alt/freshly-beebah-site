@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freshly-Beebah | Pure & Fresh Cleaning Products</title>
+  <meta name="description" content="Freshly-Beebah: where freshness meets purity. Explore our natural, gentle, and effective cleaning products.">
+  <meta name="author" content="Freshly-Beebah">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <h1>Freshly-Beebah</h1>
+    <p>Where Fresh Meets Pure</p>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="habeebah html.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Experience the Freshness You Deserve</h2>
+      <p>Eco-friendly cleaning products crafted with nature’s finest ingredients.</p>
+    </section>
+
+    <section class="products">
+      <h2>Our Products</h2>
+      <div class="product-grid">
+        <article class="product">
+          <figure>
+            <img src="aloe fresh.jpg" alt="Aloe Fresh - Aloe-based gentle cleaner">
+            <figcaption>
+              <h3>Aloe Fresh</h3>
+              <p>Pure aloe-based freshness. Gentle on hands, strong on dirt.</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="product">
+          <figure>
+            <img src="citrus bloom.jpg" alt="Citrus Bloom - Citrus-scented cleaner">
+            <figcaption>
+              <h3>Citrus Bloom</h3>
+              <p>Zesty citrus blend that leaves your space sparkling clean.</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="product">
+          <figure>
+            <img src="ocean frech.jpg" alt="Ocean Fresh - Ocean-scented cleaner">
+            <figcaption>
+              <h3>Ocean Fresh</h3>
+              <p>Refreshing ocean scent for soft, clean hands.</p>
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h2>Stay Updated</h2>
+      <p>Join our mailing list for exclusive offers and product updates.</p>
+      <form id="subscribeForm">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <time datetime="2025">2025</time> Freshly-Beebah. All rights reserved.</p>
+    <address>
+      Contact us at <a href="mailto:info@freshlybeebah.com">info@freshlybeebah.com</a>
+    </address>
+  </footer>
+
+  <script>
+    // Animate products smoothly on hover
+    document.querySelectorAll('.product').forEach(product => {
+      product.addEventListener('mouseenter', () => {
+        product.classList.add('hovered');
+      });
+      product.addEventListener('mouseleave', () => {
+        product.classList.remove('hovered');
+      });
+    });
+
+    // Newsletter form message
+    document.getElementById('subscribeForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you for subscribing to Freshly-Beebah updates!');
+      e.target.reset();
+    });
+  </script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(90deg, #a5d6a7, #fff176);
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #2e7d32;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2e7d32;
+      font-weight: 600;
+    }
+
+    nav a:hover, .active {
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 50px 20px;
+      background: #e8f5e9;
+      border-bottom: 1px solid #c8e6c9;
+    }
+
+    .products {
+      padding: 40px;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .product {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product.hovered {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .newsletter {
+      background: #f1f8e9;
+      padding: 40px;
+    }
+
+    form {
+      margin-top: 15px;
+    }
+
+    input[type="email"] {
+      padding: 10px;
+      border: 2px solid #a5d6a7;
+      border-radius: 8px;
+      width: 250px;
+      margin-right: 10px;
+    }
+
+    button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1b5e20;
+    }
+
+    footer {
+      background: #c8e6c9;
+      padding: 20px;
+      margin-top: 50px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .product-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</body>
+</html>
